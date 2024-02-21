@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Define the internationalization functionality
  *
@@ -24,7 +23,7 @@
  * @subpackage Page_Template_Checker/includes
  * @author     Rahul Pranami <rahulpranami101@gmail.com>
  */
-class Page_Template_Checker_i18n {
+class Page_Template_Checker_I18n {
 
 
 	/**

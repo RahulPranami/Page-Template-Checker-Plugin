@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The file that defines the core plugin class
  *
@@ -85,7 +84,7 @@ class Page_Template_Checker {
 	 * Include the following files that make up the plugin:
 	 *
 	 * - Page_Template_Checker_Loader. Orchestrates the hooks of the plugin.
-	 * - Page_Template_Checker_i18n. Defines internationalization functionality.
+	 * - Page_Template_Checker_I18n. Defines internationalization functionality.
 	 * - Page_Template_Checker_Admin. Defines all hooks for the admin area.
 	 * - Page_Template_Checker_Public. Defines all hooks for the public side of the site.
 	 *
@@ -120,7 +119,7 @@ class Page_Template_Checker {
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Page_Template_Checker_i18n class in order to set the domain and to register the hook
+	 * Uses the Page_Template_Checker_I18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -128,7 +127,7 @@ class Page_Template_Checker {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Page_Template_Checker_i18n();
+		$plugin_i18n = new Page_Template_Checker_I18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 	}
