@@ -57,7 +57,7 @@ class Page_Template_Checker_Admin {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_styles() {
+	public function enqueue_styles( $hook ) {
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -72,6 +72,12 @@ class Page_Template_Checker_Admin {
 		 */
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/page-template-checker-admin.css', array(), $this->version, 'all' );
+
+		// Load only on ?page=page-template-statistics.
+		if ('tools_page_page-template-statistics' == $hook) {
+			wp_enqueue_style('tailwindcss', plugin_dir_url(__FILE__) . 'css/output.css', array(), microtime(), 'all');
+			// wp_enqueue_style('tailwindcss-min', plugin_dir_url(__FILE__) . 'css/output.min.css');
+		}
 	}
 
 	/**
@@ -79,7 +85,7 @@ class Page_Template_Checker_Admin {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_scripts() {
+	public function enqueue_scripts( $hook ) {
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -94,5 +100,26 @@ class Page_Template_Checker_Admin {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/page-template-checker-admin.js', array( 'jquery' ), $this->version, false );
+
+		// Load only on ?page=page-template-statistics.
+		if ('tools_page_page-template-statistics' == $hook) {
+			// wp_enqueue_script('htmx', plugin_dir_url(__FILE__) . 'js/htmx.min.js', array(), '1.9.10', false);
+		}
+	}
+
+	public function page_template_checker_page() {
+		add_submenu_page(
+			'tools.php',
+			'Page Template Statistics',
+			'Page Template Statistics',
+			'manage_options',
+			'page-template-statistics',
+			[$this, 'template_page_statistics']
+		);
+	}
+
+	// Function that renders the page added above
+	public function template_page_statistics() {
+		require_once plugin_dir_path(__FILE__) . 'partials/page-template-checker-admin-display.php';
 	}
 }
