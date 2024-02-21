@@ -26,7 +26,7 @@
                         <?php echo $file; ?>
                     </span> )
                 </h4>
-                <p class="float-right <?php echo ($page_count > 0) ? 'text-green-500' : 'text-red-500'; ?>">
+                <p class="float-right <?php echo ($page_count > 0) ? 'text-mantis-700' : 'text-cerise-red-700'; ?>">
                     <strong class="px-2">
                         ( <span class="px-2">
                             <?php echo $page_count; ?>
@@ -40,14 +40,14 @@
                 <ul class="list-none pl-5">
                     <?php foreach ($q->posts as $p) : ?>
                         <li>
-                            <a href="<?php echo get_permalink($p, false); ?>" class="text-base text-blue-300 hover:text-blue-500">
+                            <a href="<?php echo get_permalink($p, false); ?>" class="text-base text-blue-chill-800 hover:text-blue-chill-500">
                                 <?php echo $p->post_title; ?>
                             </a>
                         </li>
                     <?php endforeach; ?>
                 </ul>
             <?php else : ?>
-                <div class="pl-5 text-base text-red-400">
+                <div class="pl-5 text-base text-rose-of-sharon-700">
                     There Are No Pages Using This Template, you should be able to safely delete it from your theme.
                 </div>
             <?php endif; ?>

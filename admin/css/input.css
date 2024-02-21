@@ -1,3 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-waikawa-gray-100 text-blue-chill-700;
+}
+
+.active {
+  /* @apply bg-waikawa-gray-900; */
+  /* @apply text-waikawa-gray-600 border-b-2 border-waikawa-gray-600; */
+  /* @apply border-2 border-waikawa-gray-600; */
+}
+#default-tab li {
+  @apply inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium transition-all focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50;
+  /* @apply inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium transition-all focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50; */
+}
+
+#default-tab li.active {
+  /* @apply text-waikawa-gray-600 border-2 border-waikawa-gray-600; */
+  @apply bg-waikawa-gray-900 text-waikawa-gray-200 shadow;
+}
+
+#default-tab li:hover {
+  /* @apply text-waikawa-gray-900; */
+  @apply bg-waikawa-gray-900 text-waikawa-gray-200 shadow;
+}
+
+#v0-nav button {
+  @apply inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium transition-all focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50;
+}
+#v0-nav button.active {
+  /* @apply bg-waikawa-gray-900 text-waikawa-gray-600 shadow; */
+  @apply bg-waikawa-gray-900 text-waikawa-gray-600 shadow;
+
+  /* data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow */
+}
+
+/* inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow*/
+/* inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow*/
+
+h4 {
+  @apply text-waikawa-gray-600;
+}
