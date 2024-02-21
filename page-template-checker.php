@@ -77,6 +77,5 @@ function run_page_template_checker() {
 
 	$plugin = new Page_Template_Checker();
 	$plugin->run();
-
 }
 run_page_template_checker();

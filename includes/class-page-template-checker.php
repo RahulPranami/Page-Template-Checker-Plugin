@@ -77,7 +77,6 @@ class Page_Template_Checker {
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_admin_hooks();
-
 	}
 
 	/**
@@ -102,21 +101,20 @@ class Page_Template_Checker {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-page-template-checker-loader.php';
+		require_once plugin_dir_path( __DIR__ ) . 'includes/class-page-template-checker-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-page-template-checker-i18n.php';
+		require_once plugin_dir_path( __DIR__ ) . 'includes/class-page-template-checker-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-page-template-checker-admin.php';
+		require_once plugin_dir_path( __DIR__ ) . 'admin/class-page-template-checker-admin.php';
 
 		$this->loader = new Page_Template_Checker_Loader();
-
 	}
 
 	/**
@@ -133,7 +131,6 @@ class Page_Template_Checker {
 		$plugin_i18n = new Page_Template_Checker_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
-
 	}
 
 	/**
@@ -149,7 +146,6 @@ class Page_Template_Checker {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-
 	}
 
 	/**
@@ -191,5 +187,4 @@ class Page_Template_Checker {
 	public function get_version() {
 		return $this->version;
 	}
-
 }
