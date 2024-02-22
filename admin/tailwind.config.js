@@ -4,6 +4,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        'dracula-background': '#282a36',
+        'dracula-foreground': '#f8f8f2',
+        'dracula-purple': '#bd93f9',
         "waikawa-gray": {
           50: "#f2f7fb",
           100: "#e7f0f8",
@@ -98,5 +101,8 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-dracula')(),
+    require('tailwind-nord'),
+  ],
 };
